@@ -44,14 +44,16 @@ public class Ball : MonoBehaviour
         {
             if (col.gameObject.name == "LeftGaol")
             {
+                rigidBody.velocity = Vector2.right * speed;
                 IncreaseTextUIScore("RightScoreUI");
             }else if (col.gameObject.name == "RightGaol")
             {
+                rigidBody.velocity = Vector2.right * speed;
                 IncreaseTextUIScore("LeftScoreUI");
             }
 
             SoundManeger.Instance.playOneShot(SoundManeger.Instance.gaolBloop);
-
+            
             transform.position = new Vector2(0, 0);
         }
 
